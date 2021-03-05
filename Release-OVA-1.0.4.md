@@ -48,14 +48,14 @@ API response of audit logs for S3 component contains the specified parameters in
 
 # Bug Fixes:
 
-- Increase the test coverage for the differenct object sizes and multiple account. (This should be an internal fix.)
+- Increase the test coverage for the differenct object sizes and multiple account. **(This should be an internal fix.)**
 - Added the prerequisite requirement for Node replacement.
-- The stress test development for R1 release. (This should be an internal fix.)
-- Increased the test coverage for scalability test scenarios. (This should be an internal fix.)
-- Increased the test coverage for scalability testing. (This should be an internal fix.)
-- Increased the test coverage for scalability testing. (This should be an internal fix.)
-- Fixed the issue causing the CSM sanity to fail. (This should be an internal fix.)
-- Fixed the sanity related test cases.(This should be an internal fix.)
+- The stress test development for R1 release. **(This should be an internal fix.)**
+- Increased the test coverage for scalability test scenarios. **(This should be an internal fix.)**
+- Increased the test coverage for scalability testing. **(This should be an internal fix.)**
+- Increased the test coverage for scalability testing. **(This should be an internal fix.)**
+- Fixed the issue causing the CSM sanity to fail. **(This should be an internal fix.)**
+- Fixed the sanity related test cases.**(This should be an internal fix.)**
 - Fixed the stonith issue.
 - Fixed the issue of SAS HBA Alerts (Fault/Fault resolved) goes missing after component replacement SAS HBA.
 - Fixed the issue of cluster going into the unusable state when Node 2 is powering off.
@@ -70,13 +70,13 @@ API response of audit logs for S3 component contains the specified parameters in
 - Fixed the issue of private network fault alert on UI.
 - The Capacity details are displaying in the CSM GUI.
 - Fixed the issue of deployement is failed on the intel servers.
-- Updated the pillar data encryption logic. (This should be an internal fix.)
-- During the deployment the LDAP password is now encrypted. (This should be an internal fix.)
-- After the UDS rpms installed the UDS service file will be updated. (This should be an internal fix.)
+- Updated the pillar data encryption logic. **(This should be an internal fix.)**
+- During the deployment the LDAP password is now encrypted. **(This should be an internal fix.)**
+- After the UDS rpms installed the UDS service file will be updated. **(This should be an internal fix.)**
 - Fixed the issue of salt-minion is in failed state on primary node after the software update.
 - Fixed the issue of Health map for node-1 and Enclosure went missing when Node-1 is in standby Mode.
 - Fixed the issue of Kernel Mismatch error on Centos 7.8 cluster setup.
-- QA Deployment of Build failing(lustrepckgs failure,lnetservice won't start) on Centos 7.8/7.7 platform. (This should be an internal fix.)
+- QA Deployment of Build failing(lustrepckgs failure,lnetservice won't start) on Centos 7.8/7.7 platform. **(This should be an internal fix.)**
 - Fixed the issue of Health view page is displaying the old host name.
 - Fixed the issue of deployment is failing due to cryptography python package absent.
 - Fixed the issue when the SSPL installation is getting failed with requisites were not found error.
