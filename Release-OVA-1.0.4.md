@@ -113,18 +113,18 @@ This release notes  includes new features and bug fixes added to the CORTX OVA 1
 68. Fixed the issue where the NextMarker is not getting properly set in list-objects using boto3 when the bucket contains more than 1000 objects. 
 69. Fixed the issue where object listing with prefix specified continues key enumeration even after prefix match stops. 
 70. Fixed the bucket policy allows access when both deny and allow permission is present. 
-71. [splunk] Fixed the Ceph S3 regression in list object API. 
-72. [Splunk] Fixed the issue of failure for s3tests.functional.test_s3.test_bucket_acls_changes_persistent. 
-73. [Splunk] Fixed the issue of s3tests.functional.test_s3.test_bucket_notexist. 
-74. [Splunk] Fixed the issue of bad_amz_date_epoch test cases on the bucket and object creation. 
-75. [splunkv2] Fixed the issue of s3tests.functional.test_s3:test_bucket_create_naming_bad_punctuation fails.
-76. [Splunk] Fixed the issue of s3server crash in s3tests.functional.test_s3.test_multipart_upload_empty. 
-77. Fixed the issue of handle probable delete index entry delete while s3server failure during object writes. 
-78. Added the fsync call to the put_keyval operation. 
-79. CSM CLI/GUI list 500 users. 
-80. [Splunk] Fixed the s3tests.functional.test_s3:test_bucket_create_naming_bad_punctuation issue in S3 Auth Server. 
-81. [Splunk] Fixed the test_object_requestid_matchs_header_on_error issue. 
-82. The s3_bundle_generate.sh script displays the error "Repository 'csm_uploads': Error parsing config: Error parsing "baseurl = '/3rd_party'": URL must be http, ftp, file or https not ""
+71. The s3_bundle_generate.sh script displays the error "Repository 'csm_uploads': Error parsing config: Error parsing "baseurl = '/3rd_party'": URL must be http, ftp, file or https not ""
+72. Fixed the issue of handle probable delete index entry delete while s3server failure during object writes.
+73. Added the fsync call to the put_keyval operation.
+74. CSM CLI/GUI list 500 users.
+75. [Splunk] Fixed the Ceph S3 regression in list object API. 
+76. [Splunk] Fixed the issue of failure for s3tests.functional.test_s3.test_bucket_acls_changes_persistent. 
+77. [Splunk] Fixed the issue of s3tests.functional.test_s3.test_bucket_notexist. 
+78. [Splunk] Fixed the issue of bad_amz_date_epoch test cases on the bucket and object creation. 
+79. [Splunk] Fixed the issue of s3tests.functional.test_s3:test_bucket_create_naming_bad_punctuation fails.
+80. [Splunk] Fixed the issue of s3server crash in s3tests.functional.test_s3.test_multipart_upload_empty. 
+81. [Splunk] Fixed the s3tests.functional.test_s3:test_bucket_create_naming_bad_punctuation issue in S3 Auth Server. 
+82. [Splunk] Fixed the test_object_requestid_matchs_header_on_error issue. 
 83. Fixed the issue of calling the UploadPart operation the Service is unavailable. 
 84. [Splunk] Fixed the s3tests.functional.test_s3.test_multipart_upload fails issue when it ran against main branch. 
 85. [Splunk] Fixed the error code mismatch for aws4 bad_ua and bad_auth date cases issue. 
