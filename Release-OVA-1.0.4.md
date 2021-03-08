@@ -2,146 +2,130 @@ This release notes  includes new features and bug fixes added to the CORTX OVA 1
 
 # Features
 
-- Added the FRU level while generating the support bundle.
-- On the About page, the serial number is displayed.
-- Alerts on UI will display the host name instead of server name.
-- Create a ISO bundle to allow deployment in case of an isolated environment.
-- Preventing the duplication of cluster_ids to avoid double encryption
-- Dynamically generating passwords during deployment.
-- Added the Serial Number generated during the manufacturing process in manifest support bundle.
-- Updated the HA Proxy version to haproxy-1.8.14-1.el7.x86_64.rpm.
-- Integrated the LDAP configuration scprits with Provisioner.
-- Fixed the issue of LDAP replication configuration script.
-- The code refactoring to Motr wrapper file to have member functions definition in separate C++ file.
-- Update the HA Proxy version.
-- Added the S3 Services through CA-signed certificates on EES.
-- Added the support for put-copy-object.
-- Bucket policy allows the access when both deny and allow persmission is present.
-- Print Motr ret code in S3 log file for easier debugging 
-- Rotate the addb logs in the var/motr/s3server directory.
-- Change in S3 Working directory to /var/log/seagate/motr.
-- Updated the S3 Working directory to /var/log/seagate/motr.
-- Provided metadata extraction script.
-- Upgraded the netty jar in auth server.
-- The bucket policy denying access to S3 IAM users when allow permission present.
-- Only the S3 account user can delete the buckets from their account using CSM-CLI.
-- A CSM user with monitor role can view the list of available commands for which user has access using the help (-h) command.
-- The rest request with default arguments returns appropriate records.
-- A user can un-acknowledge an alert using the rest request.
-- Updated the disk usage alert generation, APIs, and test cases. 
-- Debug level logs are available for all the implemented components after the successful installation.
-- For no param interval and total_sample in the request, the GET API returns with 200 as a response code and appropriate with JSON response. 
-- Users can start a node resource using the system start [resource_name] command.
-- Debug level logs are available for all the implemented components after the configuration.
-- Info level logs are available for all the implemented components after the configuration.
-- Root users can use CSM-CLI to change other users password and roles by specifying old_password.
-- CSM users with monitor role cannot perform list, update, delete, and create operations on iam_users using the CSM-CLI.
-- Implemented the dynamic password fetching for LDAP and RAS.
-- A CSM user with role manager cannot perform any REST API request on IAM user.
-- Configure dev hardware client to test DI automated test
-API response of audit logs for S3 component contains the specified parameters information in the specified format.
-- Log-in error message is not displaying any confidential information.
-- A non-root user cannot change its password by specifying old_password and password through CSM-CLI.
-- Encrypted the passwords saved in the /etc/csm/csm.conf files.
-- Removed the access of S3 account to create CSM users from the backend.
-- The GET API returns with 400 response code if value of from param is greater that value of to param.
+ 1. On the About page, the serial number is displaying.
+ 2. The hostname displays on the UI.
+ 3. Added the FRU level while generating the support bundle.
+ 4. Created an ISO bundle to allow deployment in the isolated environment.
+ 5. Dynamically generating passwords during the deployment.
+ 6. Prevented the duplication of the cluster_ids to avoid double encryption.
+ 7. Integrated the LDAP configuration scripts with the Provisioner.
+ 8. Added the S3 Services through CA-signed certificates on EES.
+ 9. Rotate the ADDB logs in the var/motr/s3server directory.
+ 10. Updated the S3 Working directory to /var/log/seagate/motr.
+ 11. Removed the access of the S3 account to create CSM users from the backend.
+ 12. Encrypted the passwords saved in the /etc/csm/csm.conf files.
+ 13. Only the S3 account user can delete the buckets from their account using CSM-CLI.
+ 14. A CSM user with a monitor role can view the list of available commands for which the user has access using the help (-h) command.
+ 15. A user can un-acknowledge an alert using the rest request.
+ 16. Updated the disk usage alert generation, APIs, and test cases.
+ 17. Users can start a node resource using the system start [resource_name] command.
+ 18. Debug level logs are available for all the implemented components after the successful installation.
+ 19. Info level logs are available for all the implemented components after the configuration.
+ 20. Root users can use CSM-CLI to change other user passwords and roles by specifying old_password.
+ 21. CSM users with monitor roles cannot perform list, update, delete, and create operations on iam_users using the CSM-CLI.
+ 22. Implemented the dynamic password fetching for LDAP and RAS.
+ 23. A CSM user with a role manager cannot perform any REST API request on an IAM user.
+ 24. Configure the Dev hardware client to test the DI automated test.
+ 25. API response of audit logs for the S3 component contains the specified parameters information in the specified format.
+ 26. Log-in error message is not displaying any confidential information.
+ 27. A non-root user cannot change its password by specifying old_password and password through CSM-CLI.
+ 28. Print the Motr ret code in the S3 log file for easier debugging.
+ 29. Upgraded the netty jar in the AUTH server.
+ 30. Provided the metadata extraction script.
+ 31. The rest request with default arguments returns appropriate records.
+ 32. Added the support for put-copy-object.
+ 33. The bucket policy denying access to S3 IAM users when allows permission present.
+ 34. Bucket policy allows access when both deny and allow permission is present.
+ 35. Added the Serial Number generated during the manufacturing process in the manifest support bundle.
+ 36. The code refactoring to the Motr wrapper file to have member functions defined in a separate C++ file.
+ 37. The GET API returns with 400 response code if the value of from param is greater than the value of to param.
+ 38. For no param interval and total_sample in the request, the GET API returns with 200 as a response code and appropriate with JSON response.
 
 # Bug Fixes:
 
-- Increase the test coverage for the differenct object sizes and multiple account. **(This should be an internal fix.)**
-- Added the prerequisite requirement for Node replacement.
-- The stress test development for R1 release. **(This should be an internal fix.)**
-- Increased the test coverage for scalability test scenarios. **(This should be an internal fix.)**
-- Increased the test coverage for scalability testing. **(This should be an internal fix.)**
-- Increased the test coverage for scalability testing. **(This should be an internal fix.)**
-- Fixed the issue causing the CSM sanity to fail. **(This should be an internal fix.)**
-- Fixed the sanity related test cases.**(This should be an internal fix.)**
-- Fixed the stonith issue.
-- Fixed the issue of SAS HBA Alerts (Fault/Fault resolved) goes missing after component replacement SAS HBA.
-- Fixed the issue of cluster going into the unusable state when Node 2 is powering off.
-- Updated all the health resources.
-- Updated the statsd plug-in.
-- Updated the CSM setup to fix the CSM configuration issues.
-- Fixed the file naming convention issue.
-- Updated the path to collect the motr logs
-- Fixed the tar file creation issue.
-- Updated the cron timeout to fix the system shutdown issue.
-- Fixed the time zone issue.
-- Fixed the issue of private network fault alert on UI.
-- The Capacity details are displaying in the CSM GUI.
-- Fixed the issue of deployement is failed on the intel servers.
-- Updated the pillar data encryption logic. **(This should be an internal fix.)**
-- During the deployment the LDAP password is now encrypted. **(This should be an internal fix.)**
-- After the UDS rpms installed the UDS service file will be updated. **(This should be an internal fix.)**
-- Fixed the issue of salt-minion is in failed state on primary node after the software update.
-- Fixed the issue of Health map for node-1 and Enclosure went missing when Node-1 is in standby Mode.
-- Fixed the issue of Kernel Mismatch error on Centos 7.8 cluster setup.
-- QA Deployment of Build failing(lustrepckgs failure,lnetservice won't start) on Centos 7.8/7.7 platform. **(This should be an internal fix.)**
-- Fixed the issue of Health view page is displaying the old host name.
-- Fixed the issue of deployment is failing due to cryptography python package absent.
-- Fixed the issue when the SSPL installation is getting failed with requisites were not found error.
-- Fixed the issue of deploy replacement is getting failed as serial number is already assigned in stage 1.
-- Fixed the issue of cortxub user password is not expiring at the first login.
-- Fixed the of issue CSM UI giving success message for software update when the software update is failed using CSM UI.
-- Fixed the of issue of beta build deployment fails on the dell systems as mpath fails to set different priorities on LUNs.
-- Fixed the of issue of the cortxub user first login with credentials failed with permission denied.
-- Fixed the error  when the unboxing fails with ERROR - Salt client command failed and static network configuration.
-- Fixed the issue when software upgrade fails from Build 471 to 486.
-- Fixed the issue where unboxing script fails to update the SSH file.
-- Fixed the issue of firmware update fails with old controller firmware.
-- Fixed the issue where post successful build deployment, stonith resource is missing in pcs status as BMC IP for primary node failed to update in cluser pillar file. 
-- Fixed the issue of primary node is inaccessible from secondary node and PCS status shows all services up.
-- Moved the cluster unmaintenance after CSM config stage.
-- Fixed the issue of Node replacement failed in deploy replacement stage2 for NodeJS after boxing-unboxing.
-- Fixed the issue of unboxing unboxning with static network configuration.
-- Adjusted failback mechanism in glusterfs.
-- Fixed the issue where the NodeJS installation fails during node replacement due to missing entries in "salt-call pillar.items commons".
-- Fixed the issue of unboxing is hung while updating management VIP in pillar.
-- Configure the HA Proxy for a DHCP environment.
-- Fixed the issue where IP validation failed for public data network.
-- Blocked the Motr remote access on management and data networks.
-- Fixed the issue of unboxing fails when hostname and IP are changed during unboxing at volume creation phase.
-- Fixed the issue of VIPS failed to update while unboxing in the DHCP environment .
-- Generating the support bundle for the current state of system health view dynamically.
-- Fixed the consul error for HCTL Status.
-- Alerts for FAN insertion and removal 
-- Fixed the PC cluster stop command for Node reboot.
-- Fixed the deployment for 1TB, 3TB, and 5TB volume size.
-- Fixed the Node replacement issue.
-- Fixed the CSM GUI update issue.
-- Fixed the issue of unbox failure.
-- Installation by HA is caused deployment fails due to consul_watcher, fix the issue and remove the VM related configuration.
-- Changed owner of SSPL directory to sspl-ll user to access "/var/cortx/sspl" directory in SSPL code.
-- Added lshw package as required package in sspl-ll.spec file.
-- Fixed an issue that was causing multiple "RAID integrity" alerts generation.
-- Updated the resource health view script to add a node disks dictionary in the node data os section.
-- Added the change to retry consul if there is a internal server error and to store the message in consul if there is any type of error happens while publishing the message to RabbitMQ Queue.
-- Updated the SSPL resource stop logic.
-- Stored minion id, consul host, and port in conf file during sspl_config, to start SSPL service in minimum time on replaced node after node replacement.
-- Used the show configuration API to fetch the correct chasis serial number.
-- Fixed the Invalid Session key handle error.
-- Corrected the JSON messages.
-- Updated the pyinstaller to 3.5.
-- Added cortx-prvsnr installation as part of cortx-csm build process. 
-- Removed un-installed packages from CORTX component list. 
-- Improve the performance of S3 Server.
-- Fixed the issue of illegal character generated as part of S3 access key.
-- Fix the S3 sanity cleanup issues. 
-- Fixed the issue where the NextMarker is not getting properly set in list objects using boto3 when bucket contains more than 1000 objects.
-- Fixed the issue where object listing with prefix specified continues key enumeration even after prefix match stops.
-- Fixed the bucket policy allows the access when both deny and allow permission is present.
-- [splunk]  Fixed the Ceph S3 regression in list object API.
-- [Splunk] Fix the issue of failure for s3tests.functional.test_s3.test_bucket_acls_changes_persistent.
-- [Splunk] Fixed the issue of s3tests.functional.test_s3.test_bucket_notexist.
-- [Splunk] Fixed the issue of bad_amz_date_epoch test cases on the bucket and object creation.
-- [splunkv2] Fixed the issue of s3tests.functional.test_s3:test_bucket_create_naming_bad_punctuation fails.
-- [Splunk] Fixed the issue of s3server crash in s3tests.functional.test_s3.test_multipart_upload_empty.
-- Fixed the issue of handle probable delete index entry delete while s3server failure during object write.
-- Added the fsync call to the put_keyval operation.
-- CSM CLI/GUI list 500 users. 
-- [Splunk] Fixed the s3tests.functional.test_s3:test_bucket_create_naming_bad_punctuation issue in S3 Auth Server.
-- [Splunk] Fixed the test_object_requestid_matchs_header_on_error issue.
-- The s3_bundle_generate.sh script displays the error "Repository 'csm_uploads': Error parsing config: Error parsing "baseurl = '/3rd_party'": URL must be http, ftp, file or https not ""
-- Fixed the issue of calling the UploadPart operation the Service is unavailable.
-- [splunkv4] Fixed the s3tests.functional.test_s3.test_multipart_upload fails issue when it ran against main branch.
-- [Splunk] Fixed the error code mismatch for aws4 bad_ua and bad_auth date cases issue.
+1. Added the prerequisite requirement for Node replacement.
+2. Fixed the STONITH issue.
+3. Fixed the issue of the SAS HBA Alerts (Fault/Fault resolved) that goes missing after component replacement SAS HBA.
+4. Fixed the issue of the cluster going into the unusable state when Node 2 is powering off.
+5. Updated all the health resources.
+6. Updated the StatsD plug-in.
+7. Updated the CSM setup to fix the CSM configuration issues.
+8. Fixed the file naming convention issue.
+9. Updated the path to collect the motr logs.
+10. Fixed the tar file creation issue. 
+11. Updated the cron timeout to fix the system shutdown issue. 
+12. Fixed the time-zone issue.
+13. Fixed the issue of private network fault alert on UI.
+14. The Capacity details are displaying in the CSM GUI. 
+15. Fixed the issue of deployment is failed on the Intel servers.
+16. After the UDS RPMs are installed the UDS service file will be updated.
+17. Fixed the issue of salt-minion is in failed state on a primary node after the software update.
+18. Fixed the issue of Health map for node-1 and Enclosure went missing when Node-1 is in standby mode. 
+19. Fixed the issue of the Kernel Mismatch error on the CentOS 7.8 cluster setup. 
+20. Fixed the issue of the Health view page is displaying the old hostname.
+21. Fixed the issue of deployment is failing due to the cryptography python package absent. 
+22. Fixed the issue when the SSPL installation is getting failed with requisites were not found an error. 
+23. Fixed the issue of deploy replacement is getting failed as the serial number is already assigned in stage 1. 
+24. Fixed the issue of cortxub user password is not expiring at the first login. 
+25. Fixed the issue of the CSM UI giving a success message for a software update when the software update is failed using CSM UI. 
+26. Fixed the issue of the beta build deployment fails on the dell systems as the mpath fails to set different priorities on LUNs. 
+27. Fixed the issue of the cortxub user's first login with credentials failed with permission denied. 
+28. Fixed the issue when the unboxing fails with ERROR - Salt client command failed and static network configuration. 
+29. Fixed the issue where the unboxing script fails to update the SSH file. 
+30. Fixed the issue where post successful build deployment, the stonith resource is missing in pcs status as BMC IP for primary node failed to update in the cluser pillar file. 
+31. Fixed the issue of the primary node is inaccessible from the secondary node and PCS status shows all services up. 
+32. Moved the cluster to unmaintenance after the CSM config stage. 
+33. Fixed the issue of the Node replacement failed in deploy replacement stage 2 for the NodeJS after boxing-unboxing. 
+34. Fixed the issue of unboxing with the static network configuration. 
+35. Adjusted the fallback mechanism in the glusterfs. 
+36. Fixed the issue where the NodeJS installation fails during the node replacement due to missing entries in the "salt-call pillar.items commons". 
+37. Fixed the issue of the unboxing is hung while updating management VIP in the pillar. 
+38. Configure the HA Proxy for the DHCP environment. 
+39. Fixed the issue where the IP validation fails for the public data network. 
+40. Blocked the Motr remote access on the management and data networks. 
+41. Fixed the issue of unboxing fails when hostname and IP are changed during unboxing at the volume creation phase. 
+42. Fixed the issue of the VIPs failed to update while unboxing in the DHCP environment.
+43. Generating the support bundle for the current state of system health view dynamically. 
+44. Fixed the consul error for HCTL Status. 
+45. Added the alerts for the FAN insertion and removal. 
+46. Fixed the PC cluster stop command issue for Node reboot. 
+47. Fixed the deployment for 1TB, 3TB, and 5TB volume size. 
+48. Fixed the Node replacement issue. 
+49. Fixed the CSM GUI update issue. 
+50. Fixed the issue of unboxing failure. 
+51. Fixed the issue of the HA installation caused the deployment to fail due to consul_watcher. Also, removed the VM-related configuration. 
+52. Changed the owner of the SSPL directory to the sspl-ll user to access the "/var/cortx/sspl" directory in SSPL code. 
+53. Added the lshw package as a required package in sspl-ll.spec file. 
+54. Fixed the issue that was causing multiple "RAID integrity" alerts generation. 
+55. Updated the resource health view script to add a node disk dictionary in the node data OS section. 
+56. Added the change to retry consul if there is an internal server error and to store the message in consul if there is any type of error happens while publishing the message to the RabbitMQ Queue.
+57. Updated the SSPL resource stop logic. 
+58. Stored minion ID, consul host, and port in conf file during sspl_config, to start SSPL service in minimum time on a replaced node after node replacement. 
+59. Used the show configuration API to fetch the correct chassis serial number. 
+60. Fixed the Invalid Session key handle error.
+61. Updated the JSON messages. 
+62. Updated the pyinstaller version. 
+63. Added the cortx-prvsnr installation as part of the cortx-csm build process. 
+64. Removed the uninstalled packages from the CORTX component list. 
+65. Improve the performance of the S3 Server. 
+66. Fixed the issue of illegal characters generated as part of the S3 access key. 
+67. Fix the S3 sanity cleanup issues. 
+68. Fixed the issue where the NextMarker is not getting properly set in list-objects using boto3 when the bucket contains more than 1000 objects. 
+69. Fixed the issue where object listing with prefix specified continues key enumeration even after prefix match stops. 
+70. Fixed the bucket policy allows access when both deny and allow permission is present. 
+71. [splunk] Fixed the Ceph S3 regression in list object API. 
+72. [Splunk] Fixed the issue of failure for s3tests.functional.test_s3.test_bucket_acls_changes_persistent. 
+73. [Splunk] Fixed the issue of s3tests.functional.test_s3.test_bucket_notexist. 
+74. [Splunk] Fixed the issue of bad_amz_date_epoch test cases on the bucket and object creation. 
+75. [splunkv2] Fixed the issue of s3tests.functional.test_s3:test_bucket_create_naming_bad_punctuation fails.
+76. [Splunk] Fixed the issue of s3server crash in s3tests.functional.test_s3.test_multipart_upload_empty. 
+77. Fixed the issue of handle probable delete index entry delete while s3server failure during object writes. 
+78. Added the fsync call to the put_keyval operation. 
+79. CSM CLI/GUI list 500 users. 
+80. [Splunk] Fixed the s3tests.functional.test_s3:test_bucket_create_naming_bad_punctuation issue in S3 Auth Server. 
+81. [Splunk] Fixed the test_object_requestid_matchs_header_on_error issue. 
+82. The s3_bundle_generate.sh script displays the error "Repository 'csm_uploads': Error parsing config: Error parsing "baseurl = '/3rd_party'": URL must be http, ftp, file or https not ""
+83. Fixed the issue of calling the UploadPart operation the Service is unavailable. 
+84. [Splunk] Fixed the s3tests.functional.test_s3.test_multipart_upload fails issue when it ran against main branch. 
+85. [Splunk] Fixed the error code mismatch for aws4 bad_ua and bad_auth date cases issue. 
+86. Updated the HA Proxy version. 
