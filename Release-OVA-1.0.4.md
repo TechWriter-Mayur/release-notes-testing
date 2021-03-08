@@ -72,9 +72,9 @@ This release notes  includes new features and bug fixes added to the CORTX OVA 1
 27. Fixed the issue of the cortxub user's first login with credentials failed with permission denied. 
 28. Fixed the issue when the unboxing fails with ERROR - Salt client command failed and static network configuration. 
 29. Fixed the issue where the unboxing script fails to update the SSH file. 
-30. Fixed the issue where post successful build deployment, the stonith resource is missing in pcs status as BMC IP for primary node failed to update in the cluser pillar file. 
+30. Fixed the issue where post successful build deployment, the stonith resource is missing in pcs status as BMC IP for primary node failed to update in the cluster pillar file. 
 31. Fixed the issue of the primary node is inaccessible from the secondary node and PCS status shows all services up. 
-32. Moved the cluster to unmaintenance after the CSM config stage. 
+32. Moved the cluster out of maintenance state after the CSM config stage. 
 33. Fixed the issue of the Node replacement failed in deploy replacement stage 2 for the NodeJS after boxing-unboxing. 
 34. Fixed the issue of unboxing with the static network configuration. 
 35. Adjusted the fallback mechanism in the glusterfs. 
